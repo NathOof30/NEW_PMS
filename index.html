@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e8590c">
+  <title>PMS Pro Hygiène — Plan de Maîtrise Sanitaire</title>
+
+  <!-- Feuilles de style modulaires -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css">
+
+  <!-- Configuration PWA -->
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app-root">
+    <!-- En-tête supérieur avec utilisateur actif -->
+    <header class="app-header">
+      <div class="app-brand">
+        <span>🛡️</span>
+        <span>PMS Pro Hygiène</span>
+      </div>
+      <div id="header-user-wrapper" style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Utilisateur :</span>
+        <strong id="header-user-name">Yannick</strong>
+        <span class="badge badge-success" title="Données 100% locales sans serveur">Local</span>
+        <button class="header-settings-button" id="header-settings-button" type="button" aria-label="Ouvrir les réglages" title="Réglages">⚙️</button>
+      </div>
+    </header>
+
+    <!-- Zone d'injection des modules -->
+    <main class="app-main" id="view-container">
+      <!-- Le module actif est injecté ici dynamiquement par js/app.js -->
+    </main>
+
+    <!-- Barre de navigation inférieure (Optimisée tactile / cuisine) -->
+    <nav class="app-bottom-nav" aria-label="Navigation principale">
+      <button class="nav-item active" data-route="home" aria-label="Accueil">
+        <span class="nav-icon">🏠</span>
+        <span>Accueil</span>
+      </button>
+      <button class="nav-item" data-route="temp" aria-label="Températures et HACCP">
+        <span class="nav-icon">🌡️</span>
+        <span>Températures</span>
+      </button>
+      <button class="nav-item" data-route="hygiene" aria-label="Hygiène et nettoyage">
+        <span class="nav-icon">🧽</span>
+        <span>Hygiène</span>
+      </button>
+      <button class="nav-item" data-route="reception" aria-label="Réception des marchandises">
+        <span class="nav-icon">📦</span>
+        <span>Réception</span>
+      </button>
+      <button class="nav-item" data-route="traceability" aria-label="Traçabilité et étiquettes">
+        <span class="nav-icon">🏷️</span>
+        <span>Traçabilité</span>
+      </button>
+      <button class="nav-item" data-route="inspection" aria-label="Registres et contrôle">
+        <span class="nav-icon">🔍</span>
+        <span>Registres</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <!-- Script principal ES Module -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

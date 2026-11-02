@@ -1,0 +1,116 @@
+/* ==========================================================================
+   STYLES D'IMPRESSION (ÉTIQUETTES THERMIQUES ET RAPPORTS A4)
+   ========================================================================== */
+
+#print-label-batch {
+  display: none;
+}
+
+@media print {
+  #toast {
+    display: none !important;
+  }
+
+  body.print-label-batch #app-root {
+    display: none !important;
+  }
+
+  body.print-label-batch #print-label-batch {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, 62mm);
+    align-items: start;
+    gap: 8mm 6mm;
+    width: 100%;
+    padding: 0;
+  }
+
+  body.print-label-batch .print-label-batch-item {
+    display: block !important;
+    width: 62mm;
+    min-height: 38mm;
+    margin: 0;
+    padding: 4mm;
+    border: 1px dashed #000000;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    font-size: 10px;
+  }
+
+  body.print-label-batch .print-label-heading {
+    margin: 0 0 2mm;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  body.print-label-only #app-root > * {
+    display: none !important;
+  }
+
+  body.print-label-only #app-root .app-main,
+  body.print-label-only #app-root .app-main .module-traceability > #trace-label-preview {
+    display: block !important;
+  }
+
+  body.print-label-only .module-traceability > * {
+    display: none !important;
+  }
+
+  body.print-label-only .module-traceability > #trace-label-preview {
+    display: block !important;
+    width: 62mm;
+    margin: 0;
+    border: 1px dashed #000000;
+  }
+
+  /* Masquer l'interface de navigation et les boutons */
+  .app-header,
+  .app-bottom-nav,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+  }
+
+  .app-main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Format étiquette thermique (traçabilité secondaire) */
+  .print-label {
+    width: 62mm;
+    padding: 3mm;
+    border: 1px dashed #000000;
+    font-size: 11px;
+    page-break-inside: avoid;
+  }
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  /* Format rapport officiel inspection A4 */
+  .print-report {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .print-report table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .print-report th, 
+  .print-report td {
+    border: 1px solid #333333;
+    padding: 6px;
+  }
+}

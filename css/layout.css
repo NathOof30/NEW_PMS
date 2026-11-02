@@ -1,0 +1,123 @@
+/* ==========================================================================
+   MISE EN PAGE ET STRUCTURE GLOBALE
+   ========================================================================== */
+
+#app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* En-tête supérieur */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  gap: var(--space-md);
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-main);
+}
+
+.header-settings-button {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  cursor: pointer;
+}
+
+/* Zone principale de contenu */
+.app-main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-md);
+  padding-bottom: 100px; /* Dégagement barre basse */
+}
+
+/* Navigation principale (adaptée mobile / tablette cuisine) */
+.app-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  padding: var(--space-xs) 0 calc(var(--space-xs) + env(safe-area-inset-bottom, 0px));
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 2px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  font-size: 0.68rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  min-height: 52px;
+  white-space: nowrap;
+}
+
+.nav-item .nav-icon {
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+}
+
+.nav-item.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+@media (min-width: 700px) {
+  .app-bottom-nav {
+    grid-template-columns: repeat(6, minmax(96px, 1fr));
+    justify-content: center;
+  }
+
+  .nav-item {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-header {
+    align-items: flex-start;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .app-brand {
+    font-size: 1rem;
+  }
+
+  #header-user-wrapper {
+    gap: 4px !important;
+  }
+
+  #header-user-wrapper label {
+    display: none;
+  }
+}

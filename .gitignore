@@ -1,0 +1,36 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Éditeurs et IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+*.swp
+*.swo
+
+# Dépendances et sorties de build
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+
+# Variables d'environnement et secrets locaux
+.env
+.env.*
+!.env.example
+
+# Sauvegardes et exports locaux contenant les données PMS
+sauvegarde-pms-*.json
+backup/
+backups/
+
+# Journaux et fichiers temporaires
+*.log
+*.tmp
+*.temp
+
